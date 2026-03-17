@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Hover Effect - Question 13</title>
+    <style>
+        .hover-card {
+            width: 300px;
+            padding: 30px;
+            background-color: #ffffff;
+            border: 2px solid #3498db;
+            border-radius: 10px;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            font-family: Arial, sans-serif;
+            margin: 50px auto;
+        }
+
+        .hover-card:hover {
+            background-color: #3498db;
+            color: white;
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .hover-card h2 {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+
+<body style="background-color: #f0f0f0;">
+    <div class="hover-card">
+        <h2>Hover Over Me!</h2>
+        <p>This card changes color and scales up when you hover your mouse over it.</p>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Measurement Table - Question 9</title>
+</head>
+
+<body style="font-family: Arial, sans-serif; padding: 20px;">
+
+    <style>
+        .layout-container {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+        }
+
+        .sidebar {
+            flex: 1;
+            background-color: #f4f4f4;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .content {
+            flex: 3;
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        @media (max-width: 768px) {
+            .layout-container {
+                flex-direction: column;
+            }
+        }
+    </style>
+
+    <div class="layout-container">
+        <aside class="sidebar">
+            <h3>Sidebar</h3>
+            <p>This is the left sidebar area. It contains navigation links or supplementary information.</p>
+        </aside>
+        <main class="content">
+            <h1>Main Content Area</h1>
+            <p>This is the primary content area. On larger screens, it sits to the right of the sidebar. On smaller
+                screens (less than 768px), the layout stacks vertically using Flexbox and Media Queries.</p>
+        </main>
+    </div>
+</body>
+
+</html>
