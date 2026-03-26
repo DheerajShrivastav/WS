@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Sonic Gallery - Premium Music Experience</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#53e076",
+                        "on-secondary": "#303030",
+                        "on-primary-fixed-variant": "#005320",
+                        "on-background": "#e5e2e1",
+                        "primary-container": "#1db954",
+                        "primary-fixed-dim": "#53e076",
+                        "surface-variant": "#353534",
+                        "inverse-primary": "#006e2d",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "on-secondary-fixed-variant": "#474746",
+                        "tertiary-container": "#a1a1a1",
+                        "background": "#131313",
+                        "surface": "#131313",
+                        "secondary-container": "#474746",
+                        "outline-variant": "#3d4a3d",
+                        "on-primary": "#003914",
+                        "on-surface": "#e5e2e1",
+                        "on-error": "#690005",
+                        "on-primary-container": "#004118",
+                        "error": "#ffb4ab",
+                        "on-tertiary-container": "#373838",
+                        "tertiary": "#c7c6c6",
+                        "on-secondary-fixed": "#1b1c1c",
+                        "surface-container": "#201f1f",
+                        "surface-bright": "#393939",
+                        "on-secondary-container": "#b7b5b4",
+                        "inverse-on-surface": "#313030",
+                        "on-primary-fixed": "#002108",
+                        "tertiary-fixed": "#e3e2e2",
+                        "on-tertiary": "#2f3131",
+                        "surface-container-high": "#2a2a2a",
+                        "on-surface-variant": "#bccbb9",
+                        "secondary": "#c8c6c5",
+                        "on-tertiary-fixed-variant": "#464747",
+                        "primary-fixed": "#72fe8f",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "secondary-fixed": "#e4e2e1",
+                        "surface-container-lowest": "#0e0e0e",
+                        "inverse-surface": "#e5e2e1",
+                        "outline": "#869585",
+                        "surface-container-highest": "#353534",
+                        "surface-container-low": "#1c1b1b",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-fixed-dim": "#c7c6c6",
+                        "surface-tint": "#53e076",
+                        "error-container": "#93000a",
+                        "surface-dim": "#131313"
+                    },
+                    fontFamily: {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        body {
+            background-color: #131313;
+            color: #e5e2e1;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #353534;
+            border-radius: 10px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #474746;
+        }
+    </style>
+</head>
+
+<body class="overflow-hidden">
+    <div class="flex h-screen w-full bg-background">
+        <!-- SideNavBar Component -->
+        <aside
+            class="hidden md:flex flex-col h-full py-6 px-2 bg-[#201f1f] dark:bg-[#201f1f] w-64 fixed left-0 top-0 z-40 transition-all duration-300">
+            <div class="px-6 mb-8">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-lg bg-primary flex items-center justify-center text-on-primary">
+                        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">album</span>
+                    </div>
+                    <div>
+                        <h1 class="text-2xl font-black text-[#53e076] leading-none">Sonic Gallery</h1>
+                        <span class="text-[10px] uppercase tracking-widest text-[#bccbb9] font-bold">Premium</span>
+                    </div>
+                </div>
+            </div>
+            <nav class="flex flex-col gap-1 px-2">
+                <!-- Home - Active State -->
+                <a class="flex items-center gap-4 py-3 text-[#e5e2e1] font-bold border-l-2 border-[#53e076] pl-4 hover:text-[#e5e2e1] transition-all group"
+                    href="#">
+                    <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+                    <span class="font-['Plus_Jakarta_Sans'] text-base tracking-tight">Home</span>
+                </a>
+                <a class="flex items-center gap-4 py-3 text-[#bccbb9] font-medium pl-4 hover:text-[#e5e2e1] transition-all group"
+                    href="#">
+                    <span class="material-symbols-outlined">search</span>
+                    <span class="font-['Plus_Jakarta_Sans'] text-base tracking-tight">Search</span>
+                </a>
+                <a class="flex items-center gap-4 py-3 text-[#bccbb9] font-medium pl-4 hover:text-[#e5e2e1] transition-all group"
+                    href="#">
+                    <span class="material-symbols-outlined">library_music</span>
+                    <span class="font-['Plus_Jakarta_Sans'] text-base tracking-tight">Your Library</span>
+                </a>
+                <div class="mt-8 mb-4 px-4">
+                    <span class="text-xs font-bold text-[#bccbb9]/50 uppercase tracking-widest">Playlists</span>
+                </div>
+                <a class="flex items-center gap-4 py-3 text-[#bccbb9] font-medium pl-4 hover:text-[#e5e2e1] transition-all group"
+                    href="#">
+                    <span class="material-symbols-outlined">add_box</span>
+                    <span class="font-['Plus_Jakarta_Sans'] text-base tracking-tight">Create Playlist</span>
+                </a>
+                <a class="flex items-center gap-4 py-3 text-[#bccbb9] font-medium pl-4 hover:text-[#e5e2e1] transition-all group"
+                    href="#">
+                    <div
+                        class="w-6 h-6 rounded-sm bg-gradient-to-br from-indigo-600 to-purple-400 flex items-center justify-center">
+                        <span class="material-symbols-outlined text-[16px] text-white"
+                            style="font-variation-settings: 'FILL' 1;">favorite</span>
+                    </div>
+                    <span class="font-['Plus_Jakarta_Sans'] text-base tracking-tight">Liked Songs</span>
+                </a>
+            </nav>
+            <div class="mt-auto px-4">
+                <button
+                    class="w-full py-4 px-6 bg-surface-container-highest rounded-xl text-[#53e076] font-bold text-sm flex items-center justify-between hover:bg-surface-variant transition-colors group">
+                    <span>Upgrade to Plus</span>
+                    <span
+                        class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                </button>
+            </div>
+        </aside>
+        <!-- Main Content Area -->
+        <main class="flex-1 md:ml-64 h-full overflow-y-auto custom-scrollbar bg-surface relative">
+            <!-- TopNavBar Component -->
+            <header
+                class="flex justify-between items-center w-full px-8 py-4 sticky top-0 bg-[#131313]/70 dark:bg-[#131313]/70 backdrop-blur-xl z-50">
+                <div class="flex items-center gap-4">
+                    <div class="flex gap-2">
+                        <button
+                            class="w-8 h-8 rounded-full bg-black/40 flex items-center justify-center text-[#bccbb9] hover:text-[#e5e2e1] transition-colors">
+                            <span class="material-symbols-outlined">chevron_left</span>
+                        </button>
+                        <button
+                            class="w-8 h-8 rounded-full bg-black/40 flex items-center justify-center text-[#bccbb9] hover:text-[#e5e2e1] transition-colors">
+                            <span class="material-symbols-outlined">chevron_right</span>
+                        </button>
+                    </div>
+                    <!-- Search Bar Integrated -->
+                    <div class="relative hidden lg:block ml-4">
+                        <span
+                            class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[#bccbb9] text-xl">search</span>
+                        <input
+                            class="bg-surface-container-high border-none rounded-full py-2.5 pl-11 pr-4 w-80 text-sm focus:ring-1 focus:ring-primary text-on-surface placeholder:text-on-surface-variant/50"
+                            placeholder="What do you want to listen to?" type="text" />
+                    </div>
+                </div>
+                <div class="flex items-center gap-6">
+                    <div class="hidden sm:flex gap-6">
+                        <a class="text-[#e5e2e1] font-bold font-['Plus_Jakarta_Sans'] text-sm hover:text-[#e5e2e1] transition-colors duration-200"
+                            href="#">Support</a>
+                        <a class="text-[#bccbb9] font-bold font-['Plus_Jakarta_Sans'] text-sm hover:text-[#e5e2e1] transition-colors duration-200"
+                            href="#">Download</a>
+                    </div>
+                    <div class="h-6 w-[1px] bg-outline-variant/30 hidden sm:block"></div>
+                    <div class="flex items-center gap-4">
+                        <button
+                            class="text-[#bccbb9] hover:text-primary transition-colors active:scale-90 duration-200">
+                            <span class="material-symbols-outlined">notifications</span>
+                        </button>
+                        <button
+                            class="text-[#bccbb9] hover:text-primary transition-colors active:scale-90 duration-200">
+                            <span class="material-symbols-outlined">group</span>
+                        </button>
+                        <div
+                            class="w-10 h-10 rounded-full border-2 border-surface-container-highest overflow-hidden cursor-pointer hover:border-primary transition-colors">
+                            <img alt="User profile" class="w-full h-full object-cover"
+                                data-alt="close-up portrait of a young man with a friendly expression, professional studio lighting, blurred neutral background"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKb6CFzBzyxBKwvXvwTracuQEJ1Jcb_jzPNpX71V-gly9rSgyt9LwOxxnC1sUHgvxZAAFWwGPC5pz17QR8H4EK0SSaXZmTxcNcJwuSdSyt1hbOEXgurjjilWzghbmWP1AlBpfMnpRB2ZMiA8HkBSDQ2-FaL284BmSl9L2MoTS6lqMQ6jyIM8FXf5Wx17kZYDsoFxBUsZM0usF2kgX2uv1-5d5gd_euKgKJ5QY-954sWAFE9pM7DSXG7XBJlpxtXWyaZj4pt58NwyHG" />
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- Page Content -->
+            <div class="px-8 pt-6 pb-32">
+                <!-- Hero Section - Bento Style -->
+                <section class="mb-10">
+                    <h2 class="text-3xl font-black font-headline mb-6 tracking-tight">Good evening</h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <!-- Bento Item 1 -->
+                        <div
+                            class="group flex items-center bg-surface-container-high/40 hover:bg-surface-container-highest/60 transition-all rounded-lg overflow-hidden cursor-pointer relative">
+                            <div class="w-20 h-20 shrink-0">
+                                <img alt="Daily Mix" class="w-full h-full object-cover shadow-lg"
+                                    data-alt="abstract artistic album cover with neon green and purple liquid swirls, high contrast, digital art style"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAd9yWdbsQm1Y2ZK-7kA9w4u1ZzJ2SLaY6AwamWqdUzf5b6p7pJvsah5huyCK0ukC0GcTQunIzg9tEy3oei1K6hjosyDMfA8qTLIJKYXpwxZ9YnmOmP_K1NPcWdPssPX3qLs4fr0q4TpDyQjIrI7LboRKzIjB7TCpjUfZFNj2fQTZNk-yjt2FkNF7BNKJLBXiyw1rSrGR8X0cSiHoRwAbNe9oCBucKhZtOa1wqYygUICivmIKpnSi8wqensv-l62OTGkZXoSNIBm2se" />
+                            </div>
+                            <div class="px-4 flex-1">
+                                <p class="font-bold text-on-surface">Daily Mix 1</p>
+                            </div>
+                            <button
+                                class="absolute right-4 w-12 h-12 rounded-full bg-primary-container text-on-primary shadow-2xl flex items-center justify-center opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                                <span class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+                            </button>
+                        </div>
+                        <!-- Bento Item 2 -->
+                        <div
+                            class="group flex items-center bg-surface-container-high/40 hover:bg-surface-container-highest/60 transition-all rounded-lg overflow-hidden cursor-pointer relative">
+                            <div class="w-20 h-20 shrink-0">
+                                <img alt="Liked Songs" class="w-full h-full object-cover shadow-lg"
+                                    data-alt="vibrant stage lighting at a music concert with silhouettes of a crowd and colorful laser beams cutting through haze"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4CP717rz85CkgLACYKHCZ-LoCDwrbyEWy-LTOTl_KVY9d0y5PaUVyXMtEe5DwOjdF9cg5bKG03RzW6KnHi-eX6ZivxEHaxLpxfq3iRB6imWFSh6178bVbJXkslppGe5dGy2ujpTf8L_SayLw4iEyji7wck7_p4RMPS2qpPugzZabIUSeWlIvAXQPK4fZL1-HSwUlBoZeR2iSqwj6fXi8v_m91EUz7kEay6pnPjTxcUfAfTLzmn0mJObiLlV3zqJkNYGg5K9Yn1AS1" />
+                            </div>
+                            <div class="px-4 flex-1">
+                                <p class="font-bold text-on-surface">Liked Songs</p>
+                            </div>
+                            <button
+                                class="absolute right-4 w-12 h-12 rounded-full bg-primary-container text-on-primary shadow-2xl flex items-center justify-center opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                                <span class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+                            </button>
+                        </div>
+                        <!-- Bento Item 3 -->
+                        <div
+                            class="group flex items-center bg-surface-container-high/40 hover:bg-surface-container-highest/60 transition-all rounded-lg overflow-hidden cursor-pointer relative">
+                            <div class="w-20 h-20 shrink-0">
+                                <img alt="Discover Weekly" class="w-full h-full object-cover shadow-lg"
+                                    data-alt="tranquil mountain landscape at dawn with misty valleys and a soft pastel sky, peaceful and cinematic atmosphere"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTAEKkwtgg5Wn6o3Q27a_BwxQEJZfLqyAwnZ63DV7b0T4TBD1C8iN0vLe2LWRDovxIRYF5X9rnhpTr_rBlqgE7Yuwlhghr7qfJv6NISJH91-r19Kj4tocEfCMXKloM1_p7rUqFfj-ox-Bljqb0gyIEjkxawif_6-qo9zc1pMdvweMKm6k6RLO-x1pSsidjlnjgTTupOGdJIKkuCzA8MHofinYQbAGUo5mebLyJ8rH1dcQF7YMnfMP10BzAVmZ7RCqHi2QInxbQVeIP" />
+                            </div>
+                            <div class="px-4 flex-1">
+                                <p class="font-bold text-on-surface">Discover Weekly</p>
+                            </div>
+                            <button
+                                class="absolute right-4 w-12 h-12 rounded-full bg-primary-container text-on-primary shadow-2xl flex items-center justify-center opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                                <span class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+                <!-- Featured Section: Made For You -->
+                <section class="mb-12">
+                    <div class="flex justify-between items-end mb-6">
+                        <div>
+                            <h3 class="text-2xl font-bold font-headline text-on-surface">Made For You</h3>
+                            <p class="text-on-surface-variant font-medium">Get better recommendations the more you
+                                listen.</p>
+                        </div>
+                        <a class="text-xs font-bold uppercase tracking-widest text-[#bccbb9] hover:underline"
+                            href="#">Show all</a>
+                    </div>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6">
+                        <!-- Card 1 -->
+                        <div
+                            class="group bg-surface-container-low p-4 rounded-xl hover:bg-surface-container-highest transition-all duration-300 cursor-pointer">
+                            <div class="relative aspect-square mb-4 overflow-hidden rounded-lg shadow-xl">
+                                <img alt="Top Mixes"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                    data-alt="extreme close-up of vinyl record grooves with dramatic warm lighting, capturing fine details and texture"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAf2uAdbIax71FOISXY8BZNMFEUAPUX6NMlk5Hwe30lzgNK8I60hA32j-NGfL477s8ZU8J5qvt0YVVgZqEwLaI1eE8U4kWDvdzqcS9bp13jG_HXDnD-OAWqL0QCZfNo2kspqjMH6iSaBWuf1i5Eetq6g3yatPOKHMzX0w2X7q2Bx9ENlmTRxcJtkiIBCTOtRYzz5raT461sQBWBiUZpY1u1pWQiiqVlB2H8MFJx43bofAp_-e00zZfeFh0OE_ncKEtUv1jxuFcTaF4P" />
+                                <button
+                                    class="absolute bottom-2 right-2 w-12 h-12 rounded-full bg-primary-container text-on-primary shadow-2xl flex items-center justify-center opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                                    <span class="material-symbols-outlined"
+                                        style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+                                </button>
+                            </div>
+                            <h4 class="font-bold text-on-surface truncate mb-1">On Repeat</h4>
+                            <p class="text-sm text-on-surface-variant line-clamp-2">The songs you can't get enough of
+                                right now.</p>
+                        </div>
+                        <!-- Card 2 -->
+                        <div
+                            class="group bg-surface-container-low p-4 rounded-xl hover:bg-surface-container-highest transition-all duration-300 cursor-pointer">
+                            <div class="relative aspect-square mb-4 overflow-hidden rounded-lg shadow-xl">
+                                <img alt="Chill Mix"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                    data-alt="professional condenser microphone in a dark studio setting with soft glowing ambient lights in the background"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkjx4XJS_Q-1fGd_JvukDPtaxfr1WzPWO58QvD2fye0xysMOwgu_-3L440OVA5TX4zJyZoOeb6_1x69y4lJ7XTDa-8DmpVm_tO9rX2y_hcy2eN7jsY26CV6P2vc-uEhN3NVESmzP5MChBp2rPk1E409-SPUNGVHKiCTVSUNsmzR5I0aAD9qV3z42HLb3qt_JXCvZUOm8vhxHmcQ-9S1xtgtSThlwysYSLBiUVZr11LEFWgJowJJLOUTB7tQvHhxLql3U7A7HAkc7_3" />
+                                <button
+                                    class="absolute bottom-2 right-2 w-12 h-12 rounded-full bg-primary-container text-on-primary shadow-2xl flex items-center justify-center opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                                    <span class="material-symbols-outlined"
+                                        style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+                                </button>
+                            </div>
+                            <h4 class="font-bold text-on-surface truncate mb-1">Time Capsule</h4>
+                            <p class="text-sm text-on-surface-variant line-clamp-2">We made you a personalized
+                                soundtrack of your favorites.</p>
+                        </div>
+                        <!-- Card 3 -->
+                        <div
+                            class="group bg-surface-container-low p-4 rounded-xl hover:bg-surface-container-highest transition-all duration-300 cursor-pointer">
+                            <div class="relative aspect-square mb-4 overflow-hidden rounded-lg shadow-xl">
+                                <img alt="Pop Mix"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                    data-alt="colorful abstract bokeh lights from a night city street, soft circular orbs of pink, blue, and yellow"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDQWnfsAOzm8vic7vPwb84BU2dJw1kVBxRhj3qMx14w7D6X_bitwStYsIkn34s0WfhfSnUFusA2XIPIEZyxo8FqJM__EefmGr-n6NmguIBbUBZcLs996YbJkEIliKO8SUkUh3CihxIGYQbAy-VO4eSmBVJZZ0IOFntKXVMdlRJoR-eLQFK96WzwYo3Kq_pQhU70X9q7rFG7MbGVcNCctC8ss8vU3QkpQUr9l0banC85izP3eHDUx236mfom74zHCkT_ZUKpzyefjoO" />
+                                <button
+                                    class="absolute bottom-2 right-2 w-12 h-12 rounded-full bg-primary-container text-on-primary shadow-2xl flex items-center justify-center opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                                    <span class="material-symbols-outlined"
+                                        style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+                                </button>
+                            </div>
+                            <h4 class="font-bold text-on-surface truncate mb-1">Repeat Rewind</h4>
+                            <p class="text-sm text-on-surface-variant line-clamp-2">Your favorite songs from a few
+                                months ago.</p>
+                        </div>
+                        <!-- Card 4 -->
+                        <div
+                            class="group bg-surface-container-low p-4 rounded-xl hover:bg-surface-container-highest transition-all duration-300 cursor-pointer">
+                            <div class="relative aspect-square mb-4 overflow-hidden rounded-lg shadow-xl">
+                                <img alt="Mood Mix"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                    data-alt="modern minimalist interior with a record player on a wooden shelf, soft sunlight streaming through a window"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbxAk5IcqsWPFI1Yip7buO5gZjPwkZlKVhp5Z5JFf26KU_ojw6pKZ2eojgorafW9gzdQBiuT-EpuPLK0G_RzkRHr7t8MEN_n5EXHlUdScGSbtSIm8Vkwa9682DUQ_Q5I9N96Qfl6rCtSoQs_ejgDhNVi5Q5Uozs9d7NemePdFEAZkwX2g9nIlaWDihd2QUORkHNlAYdM-SrsvqZn7V3tkurgMpH6o4tfwAqrfRH9s8y4kvacaTHkKC4uuaFiI7t3UTWCxF3cezvOAK" />
+                                <button
+                                    class="absolute bottom-2 right-2 w-12 h-12 rounded-full bg-primary-container text-on-primary shadow-2xl flex items-center justify-center opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                                    <span class="material-symbols-outlined"
+                                        style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+                                </button>
+                            </div>
+                            <h4 class="font-bold text-on-surface truncate mb-1">Morning Coffee</h4>
+                            <p class="text-sm text-on-surface-variant line-clamp-2">Start your day with these mellow
+                                acoustic tracks.</p>
+                        </div>
+                        <!-- Card 5 -->
+                        <div
+                            class="group bg-surface-container-low p-4 rounded-xl hover:bg-surface-container-highest transition-all duration-300 cursor-pointer">
+                            <div class="relative aspect-square mb-4 overflow-hidden rounded-lg shadow-xl">
+                                <img alt="Artist Mix"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                    data-alt="close-up of electric guitar strings being played, cinematic lighting highlighting the metallic texture and motion"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6eoKORAFTRjLXhYs6H0rS-iYIaodsx87IHuM16OYa8-MjyUjxkzS4KB7gh9Kn14NGQ7-jvfm9WUkTmtssg6gjm2lmoUNZclOhLwhz9K46XaWE8PtiG0ugrPRHU0AL9RtBUqb_JcaLG5GlbIOLCJ_-9EfEAEFVxNj7O0XGkT6y6V3M-QF7zB0QJqfmDo3nmUG3Pt5EhK6055hbHqqwBFtIU3ULITL71T9onIyMc6YumHVtbjLtHK_kxitqYUhlgqa9wOpp5lDYuvKl" />
+                                <button
+                                    class="absolute bottom-2 right-2 w-12 h-12 rounded-full bg-primary-container text-on-primary shadow-2xl flex items-center justify-center opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                                    <span class="material-symbols-outlined"
+                                        style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+                                </button>
+                            </div>
+                            <h4 class="font-bold text-on-surface truncate mb-1">Arctic Monkeys</h4>
+                            <p class="text-sm text-on-surface-variant line-clamp-2">Mix of your favorites and new tracks
+                                from the band.</p>
+                        </div>
+                        <!-- Card 6 -->
+                        <div
+                            class="group bg-surface-container-low p-4 rounded-xl hover:bg-surface-container-highest transition-all duration-300 cursor-pointer">
+                            <div class="relative aspect-square mb-4 overflow-hidden rounded-lg shadow-xl">
+                                <img alt="Recently Played"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                    data-alt="silhouette of a woman dancing against a vibrant sunset sky, ethereal and energetic mood, high contrast"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuClcCOgbdyKkJ_M4nPmgDkO94JnRgVD-khVI1oAVSlClwxj78rToWKyu1BArBPBdk8WYPTij9Qn-X0hbGrtZ3cf_1AeUofiutkfPidHGtSr-DqZF-CBBwDWhxrEl-TcKK99WWRCB3jaGK1mbs8M1jy8rx1ndgtT5HjKL1QI8SchGc2h0h_TY7uTuvkaK3KAthoGepirvnVzybeDzuhmP6JSAb37gnEvBWy6rVjRZvhr7PJT79sW2cWOg4DXl4fL9V7MrvaWZ5CPlywf" />
+                                <button
+                                    class="absolute bottom-2 right-2 w-12 h-12 rounded-full bg-primary-container text-on-primary shadow-2xl flex items-center justify-center opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                                    <span class="material-symbols-outlined"
+                                        style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+                                </button>
+                            </div>
+                            <h4 class="font-bold text-on-surface truncate mb-1">Deep Focus</h4>
+                            <p class="text-sm text-on-surface-variant line-clamp-2">Keep your head down with ambient
+                                electronic beats.</p>
+                        </div>
+                    </div>
+                </section>
+                <!-- Trending Section -->
+                <section>
+                    <div class="flex justify-between items-end mb-6">
+                        <div>
+                            <h3 class="text-2xl font-bold font-headline text-on-surface">Trending Now</h3>
+                            <p class="text-on-surface-variant font-medium">Most popular tracks from around the world.
+                            </p>
+                        </div>
+                        <a class="text-xs font-bold uppercase tracking-widest text-[#bccbb9] hover:underline"
+                            href="#">Show all</a>
+                    </div>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6">
+                        <!-- Repeatable card structures with different images -->
+                        <div
+                            class="group bg-surface-container-low p-4 rounded-xl hover:bg-surface-container-highest transition-all duration-300 cursor-pointer">
+                            <div class="relative aspect-square mb-4 overflow-hidden rounded-lg shadow-xl">
+                                <img alt="Global Top 50"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                    data-alt="dramatic wide angle shot of a massive concert crowd with hands up, illuminated by thousands of phone lights"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzsXRRkE7xE5Qz63HLNUfcEptiBJvPs3_UG_NIVYPW3DfNE3O4xoj0v94u35TEG33z4sQ-RxxgvvwRAS7IPx4K6n2wKtAEOmwACDvZj8PnxGzSU6tMiOgR37_3kVLk6LYQ2Rwzf8exFEnU_DStQ1ZDYoRkb89gyK_KmIdRxfzYUNLAvrL3gZOgQkd0SacddHqyyiD5_MM_Ot38K2kkv0xdnveJyNlEKjqKldsdygGE42bi4pKiiGfcF1Bvv2p79J0RFx3oUPDl4lO8" />
+                                <button
+                                    class="absolute bottom-2 right-2 w-12 h-12 rounded-full bg-primary-container text-on-primary shadow-2xl flex items-center justify-center opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                                    <span class="material-symbols-outlined"
+                                        style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+                                </button>
+                            </div>
+                            <h4 class="font-bold text-on-surface truncate mb-1">Global Top 50</h4>
+                            <p class="text-sm text-on-surface-variant line-clamp-2">Your daily update of the most played
+                                tracks.</p>
+                        </div>
+                        <div
+                            class="group bg-surface-container-low p-4 rounded-xl hover:bg-surface-container-highest transition-all duration-300 cursor-pointer">
+                            <div class="relative aspect-square mb-4 overflow-hidden rounded-lg shadow-xl">
+                                <img alt="Viral 50"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                    data-alt="vibrant abstract 3d rendering of floating colorful spheres and geometric shapes in a dark space, artistic and modern"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmgIO727SQ8iGmCvoX2LCrkBCSpjHX5iHta7DTs1mA_ktLxwjsqUJwMX3Lg94qx5dvMbvEna6D1qpdcZSxxTR5ibIi4FWmLb26RATn157kY82DhF9wqRaqOMN-cUy9nbC_L4OLusDMA9Rr0BzT2uZyxVQIoFjwCSI2q5N_QxvBzUV_DwWPEZP3mN9usyA9VaB2zJwmTvIfvEwM0hiaf8SVGKj-Iu0e9w5b3iCv78irC-4XtLNJooHBabIeIHTUAvsbll0woG9Jy5zP" />
+                                <button
+                                    class="absolute bottom-2 right-2 w-12 h-12 rounded-full bg-primary-container text-on-primary shadow-2xl flex items-center justify-center opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                                    <span class="material-symbols-outlined"
+                                        style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+                                </button>
+                            </div>
+                            <h4 class="font-bold text-on-surface truncate mb-1">Viral 50 - USA</h4>
+                            <p class="text-sm text-on-surface-variant line-clamp-2">The most viral tracks across the
+                                United States.</p>
+                        </div>
+                        <!-- Add 4 more simple empty cards for visual balance on large screens -->
+                        <div
+                            class="hidden lg:block group bg-surface-container-low p-4 rounded-xl hover:bg-surface-container-highest transition-all duration-300 cursor-pointer">
+                            <div
+                                class="relative aspect-square mb-4 overflow-hidden rounded-lg shadow-xl bg-surface-container">
+                            </div>
+                            <div class="h-4 w-3/4 bg-surface-container-highest rounded mb-2"></div>
+                            <div class="h-3 w-1/2 bg-surface-container-highest rounded"></div>
+                        </div>
+                        <div
+                            class="hidden lg:block group bg-surface-container-low p-4 rounded-xl hover:bg-surface-container-highest transition-all duration-300 cursor-pointer">
+                            <div
+                                class="relative aspect-square mb-4 overflow-hidden rounded-lg shadow-xl bg-surface-container">
+                            </div>
+                            <div class="h-4 w-3/4 bg-surface-container-highest rounded mb-2"></div>
+                            <div class="h-3 w-1/2 bg-surface-container-highest rounded"></div>
+                        </div>
+                        <div
+                            class="hidden xl:block group bg-surface-container-low p-4 rounded-xl hover:bg-surface-container-highest transition-all duration-300 cursor-pointer">
+                            <div
+                                class="relative aspect-square mb-4 overflow-hidden rounded-lg shadow-xl bg-surface-container">
+                            </div>
+                            <div class="h-4 w-3/4 bg-surface-container-highest rounded mb-2"></div>
+                            <div class="h-3 w-1/2 bg-surface-container-highest rounded"></div>
+                        </div>
+                        <div
+                            class="hidden xl:block group bg-surface-container-low p-4 rounded-xl hover:bg-surface-container-highest transition-all duration-300 cursor-pointer">
+                            <div
+                                class="relative aspect-square mb-4 overflow-hidden rounded-lg shadow-xl bg-surface-container">
+                            </div>
+                            <div class="h-4 w-3/4 bg-surface-container-highest rounded mb-2"></div>
+                            <div class="h-3 w-1/2 bg-surface-container-highest rounded"></div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+        <!-- Player Bar (BottomNavBar) Component -->
+        <footer
+            class="fixed bottom-0 left-0 w-full z-[100] h-24 flex justify-between items-center px-8 bg-[#131313]/90 dark:bg-[#131313]/90 backdrop-blur-2xl border-t border-[#3d4a3d]/20 shadow-2xl">
+            <!-- Left: Current Song Info -->
+            <div class="flex items-center gap-4 w-1/4">
+                <div class="w-14 h-14 rounded-lg overflow-hidden shadow-lg">
+                    <img alt="Now Playing" class="w-full h-full object-cover"
+                        data-alt="stylish minimalist album cover with a single retro cassette tape against a solid vibrant orange background"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiOQ4uilh9BM3f0jBTAok3_PegWDBR7_ygpRzAuxNo4D3NzYKaKNtwejYBsV9Psi9qmebHvFPchorguX7YDOLvDq26BhiaXyKdiYuK9WeZxPbVijExmSWq7a_rAVDTwimBYmqqgUQpzdr2XWcJuoFoEAZR5MXXu7_VMXUyR4CGkXeUVHnOhzZo3FN2SBLcKh2j1zh1zaYHK5yopqVWcHMYgkAXRPB76agw5RHNmjGGr4_stWPKG3Vu2GQe2ATTTS17Q_W-v4pWzWB4" />
+                </div>
+                <div class="overflow-hidden">
+                    <h5 class="text-sm font-bold text-on-surface truncate hover:underline cursor-pointer">Starboy</h5>
+                    <p class="text-xs text-on-surface-variant truncate hover:underline cursor-pointer">The Weeknd, Daft
+                        Punk</p>
+                </div>
+                <button class="text-[#bccbb9] hover:text-primary ml-2">
+                    <span class="material-symbols-outlined text-[20px]">favorite</span>
+                </button>
+            </div>
+            <!-- Center: Controls & Progress -->
+            <div class="flex flex-col items-center gap-2 max-w-lg w-full">
+                <div class="flex items-center gap-6">
+                    <button class="text-[#bccbb9] hover:text-primary transition-all">
+                        <span class="material-symbols-outlined">shuffle</span>
+                    </button>
+                    <button class="text-[#bccbb9] hover:text-on-surface transition-all">
+                        <span class="material-symbols-outlined">skip_previous</span>
+                    </button>
+                    <button
+                        class="w-10 h-10 rounded-full bg-white text-black flex items-center justify-center hover:scale-105 transition-all">
+                        <span class="material-symbols-outlined"
+                            style="font-variation-settings: 'FILL' 1;">play_circle</span>
+                    </button>
+                    <button class="text-[#bccbb9] hover:text-on-surface transition-all">
+                        <span class="material-symbols-outlined">skip_next</span>
+                    </button>
+                    <button class="text-[#bccbb9] hover:text-primary transition-all">
+                        <span class="material-symbols-outlined">repeat</span>
+                    </button>
+                </div>
+                <!-- Progress Bar -->
+                <div class="flex items-center gap-3 w-full">
+                    <span class="text-[10px] text-on-surface-variant font-medium">1:24</span>
+                    <div class="flex-1 h-1 bg-surface-variant rounded-full group cursor-pointer relative">
+                        <div
+                            class="absolute inset-y-0 left-0 w-[40%] bg-primary rounded-full group-hover:bg-primary-container">
+                        </div>
+                        <div
+                            class="absolute top-1/2 -translate-y-1/2 left-[40%] w-3 h-3 bg-white rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-opacity">
+                        </div>
+                    </div>
+                    <span class="text-[10px] text-on-surface-variant font-medium">3:50</span>
+                </div>
+            </div>
+            <!-- Right: Volume & Devices -->
+            <div class="flex items-center gap-4 w-1/4 justify-end">
+                <button class="text-[#bccbb9] hover:text-on-surface">
+                    <span class="material-symbols-outlined text-[20px]">mic_external_on</span>
+                </button>
+                <button class="text-[#bccbb9] hover:text-on-surface">
+                    <span class="material-symbols-outlined text-[20px]">queue_music</span>
+                </button>
+                <button class="text-[#bccbb9] hover:text-on-surface">
+                    <span class="material-symbols-outlined text-[20px]">devices</span>
+                </button>
+                <div class="flex items-center gap-2 w-24">
+                    <span class="material-symbols-outlined text-[20px] text-[#bccbb9]">volume_up</span>
+                    <div class="flex-1 h-1 bg-surface-variant rounded-full relative group cursor-pointer">
+                        <div
+                            class="absolute inset-y-0 left-0 w-[70%] bg-on-surface-variant group-hover:bg-primary rounded-full">
+                        </div>
+                    </div>
+                </div>
+                <button class="text-[#bccbb9] hover:text-on-surface">
+                    <span class="material-symbols-outlined text-[20px]">open_in_full</span>
+                </button>
+            </div>
+        </footer>
+        <!-- Mobile Bottom Nav -->
+        <nav
+            class="md:hidden fixed bottom-0 left-0 w-full z-[110] bg-[#131313]/95 backdrop-blur-xl border-t border-outline-variant/20 flex justify-around items-center h-16 px-4">
+            <a class="flex flex-col items-center gap-1 text-[#53e076]" href="#">
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+                <span class="text-[10px] uppercase font-bold tracking-widest font-['Inter']">Home</span>
+            </a>
+            <a class="flex flex-col items-center gap-1 text-[#bccbb9]" href="#">
+                <span class="material-symbols-outlined">search</span>
+                <span class="text-[10px] uppercase font-bold tracking-widest font-['Inter']">Search</span>
+            </a>
+            <a class="flex flex-col items-center gap-1 text-[#bccbb9]" href="#">
+                <span class="material-symbols-outlined">library_music</span>
+                <span class="text-[10px] uppercase font-bold tracking-widest font-['Inter']">Library</span>
+            </a>
+            <a class="flex flex-col items-center gap-1 text-[#bccbb9]" href="#">
+                <span class="material-symbols-outlined">album</span>
+                <span class="text-[10px] uppercase font-bold tracking-widest font-['Inter']">Premium</span>
+            </a>
+        </nav>
+    </div>
+</body>
+
+</html>
