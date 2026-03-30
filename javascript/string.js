@@ -72,3 +72,13 @@ function countX(str, x) {
 let str7 = "Hello World"
 let x = "o"
 console.log(countX(str7, x))
+
+// remove all non-alphanumeric characters from a string
+let str8 = "@JavaScript is a. programming language!"
+let cleanedStr = ""
+for (let i of str8) {
+    if (/[a-zA-Z0-9 ]/.test(i)) {
+        cleanedStr += i
+    }
+}
+console.log(cleanedStr)
