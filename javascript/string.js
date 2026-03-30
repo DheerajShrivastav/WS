@@ -58,3 +58,17 @@ for (let i = str6.length - 1; i >= 0; i--) {
     reversedStr6 += str6[i]
 }
 console.log(reversedStr6)
+
+// count the number of occurrences of a specific character in a string
+function countX(str, x) {
+    let count = 0
+    for (let i of str) {
+        if (i === x) {
+            count++
+        }
+    }
+    return count
+}
+let str7 = "Hello World"
+let x = "o"
+console.log(countX(str7, x))
