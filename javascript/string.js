@@ -37,3 +37,8 @@ console.log(firstWord)
 let str3 = "JavaScript is a programming language"
 str3 = str3.replaceAll(" ", "-")
 console.log(str3)
+
+// split a string into an array of words
+let str4 = "Hello World"
+str4 = str4.split(" ")
+console.log(str4)
