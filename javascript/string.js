@@ -42,3 +42,11 @@ console.log(str3)
 let str4 = "Hello World"
 str4 = str4.split(" ")
 console.log(str4)
+
+// convert the first letter of each word in a string to uppercase
+let str5 = "hello world"
+let capitalizedStr = ""
+for (let word of str5.split(" ")) {
+    capitalizedStr += word.charAt(0).toUpperCase() + word.slice(1) + " "
+}
+console.log(capitalizedStr)
