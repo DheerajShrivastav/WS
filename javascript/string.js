@@ -50,3 +50,11 @@ for (let word of str5.split(" ")) {
     capitalizedStr += word.charAt(0).toUpperCase() + word.slice(1) + " "
 }
 console.log(capitalizedStr)
+
+// reverse a string
+let str6 = "JavaScript"
+let reversedStr6 = ""
+for (let i = str6.length - 1; i >= 0; i--) {
+    reversedStr6 += str6[i]
+}
+console.log(reversedStr6)
