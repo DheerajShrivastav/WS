@@ -8,3 +8,15 @@ for (let i of str) {
     }
 }
 console.log(count)
+
+// check if a string is a palindrome
+let str1 = "madam"
+let reversedStr = ""
+for (let i = str1.length - 1; i >= 0; i--) {
+    reversedStr += str1[i]
+}
+if (str1 === reversedStr) {
+    console.log("The string is a palindrome")
+} else {
+    console.log("The string is not a palindrome")
+}
