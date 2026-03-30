@@ -20,3 +20,15 @@ if (str1 === reversedStr) {
 } else {
     console.log("The string is not a palindrome")
 }
+
+//extract the first word from a string
+let str2 = "Hello World"
+let firstWord = ""
+
+for (let i of str2) {
+    if (i === " ") {
+        break
+    }
+    firstWord += i
+}
+console.log(firstWord)
