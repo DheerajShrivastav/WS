@@ -82,3 +82,7 @@ for (let i of str8) {
     }
 }
 console.log(cleanedStr)
+
+// check if the first and last characters of a string are the same
+let str9 = "dello World"
+console.log(str9[0] === str9[str9.length - 1])
