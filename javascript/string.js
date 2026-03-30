@@ -32,3 +32,8 @@ for (let i of str2) {
     firstWord += i
 }
 console.log(firstWord)
+
+// replace all spaces in a string with hyphens
+let str3 = "JavaScript is a programming language"
+str3 = str3.replaceAll(" ", "-")
+console.log(str3)
