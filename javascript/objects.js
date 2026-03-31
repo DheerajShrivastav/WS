@@ -28,7 +28,26 @@ let product = {
     price: 999.99,
     stock: 10
 }
-//write a program to log each property and its value 
 for (let key in product) {
     console.log(`${key}: ${product[key]}`)
+}
+
+let calculator = {
+    add: function(a, b) {
+        return a + b
+    },
+    subtract: function(a, b) {
+        return a - b
+    },
+    multiply: function(a, b) {
+        return a * b
+    },
+    divide: function(a, b) {
+        if (b !== 0) {
+            return a / b
+        } else {
+            return "Cannot divide by zero"
+        }
+    }
+
 }
