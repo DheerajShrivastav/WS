@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter Even and Odd Numbers</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>4. Filter Even and Odd Numbers</h2>
+
+        <!-- Input Section -->
+        <div class="input-section">
+            <input type="number" id="numberInput" placeholder="Enter a number" />
+            <button class="btn btn-add" onclick="addNumber()">Add Number</button>
+            <button class="btn btn-even" onclick="showEven()">Show Even</button>
+            <button class="btn btn-odd" onclick="showOdd()">Show Odd</button>
+            <button class="btn btn-clear" onclick="clearAll()">Clear</button>
+        </div>
+
+        <!-- Even Numbers Display -->
+        <h3>Even Numbers</h3>
+        <div class="result-box" id="evenBox"></div>
+
+        <!-- Odd Numbers Display -->
+        <h3>Odd Numbers</h3>
+        <div class="result-box" id="oddBox"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
