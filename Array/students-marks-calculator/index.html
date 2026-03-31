@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Marks Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>2. Student Marks Calculator</h2>
+
+        <!-- Input Section -->
+        <div class="input-section">
+            <input type="number" id="markInput" placeholder="Enter a mark" min="0" max="100" />
+            <button class="btn btn-add" onclick="addMark()">Add Mark</button>
+            <button class="btn btn-calc" onclick="calculate()">Calculate</button>
+            <button class="btn btn-reset" onclick="resetAll()">Reset</button>
+        </div>
+
+        <!-- Marks List -->
+        <div class="marks-list" id="marksList"></div>
+
+        <!-- Results Section -->
+        <div class="results" id="results"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

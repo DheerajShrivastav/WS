@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f5f5f5;
+    padding: 40px 20px;
+}
+
+.container {
+    max-width: 550px;
+    margin: 0 auto;
+    background: #fff;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    padding: 30px;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 22px;
+}
+
+/* ===== Input Section ===== */
+.input-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.input-section input {
+    flex: 1;
+    min-width: 140px;
+    padding: 10px 14px;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+}
+
+.input-section input:focus {
+    border-color: #4285f4;
+}
+
+/* ===== Buttons ===== */
+.btn {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.btn:hover {
+    opacity: 0.85;
+}
+
+.btn-add {
+    background: #4285f4;
+}
+
+.btn-calc {
+    background: #4285f4;
+}
+
+.btn-reset {
+    background: #4285f4;
+}
+
+/* ===== Marks List ===== */
+.marks-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+    min-height: 20px;
+}
+
+.mark-tag {
+    background: #e8f0fe;
+    color: #333;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.mark-tag .remove {
+    cursor: pointer;
+    color: #999;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.mark-tag .remove:hover {
+    color: #e53935;
+}
+
+/* ===== Results ===== */
+.results {
+    border-top: 2px solid #eee;
+    padding-top: 16px;
+}
+
+.results p {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.results p span {
+    font-weight: 700;
+    color: #1a73e8;
+}
