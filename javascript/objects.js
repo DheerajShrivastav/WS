@@ -51,3 +51,14 @@ let calculator = {
     }
 
 }
+let person1 = {
+    name: "Alice",
+    age: 30
+}
+let person2 = {
+    name: "bob",
+    age: 20
+}
+for (let key in person1) {
+    console.log(`${key}: "person 1" ${person1[key]}"person2" ${person2[key]}`)
+}
