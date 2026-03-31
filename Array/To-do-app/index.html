@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>📝 To-Do List</h1>
+
+        <!-- Input Section -->
+        <div class="input-section">
+            <input type="text" id="todoInput" placeholder="Add a new task..." />
+            <button id="addBtn" onclick="addTodo()">Add</button>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="filter-section">
+            <button class="filter-btn active" onclick="filterTodos('all')">All</button>
+            <button class="filter-btn" onclick="filterTodos('pending')">Pending</button>
+            <button class="filter-btn" onclick="filterTodos('completed')">Completed</button>
+        </div>
+
+        <!-- Todo List -->
+        <ul id="todoList"></ul>
+
+        <!-- Summary -->
+        <div class="summary" id="summary">
+            Total: 0 | Pending: 0 | Completed: 0
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
