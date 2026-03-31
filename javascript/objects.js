@@ -22,3 +22,13 @@ let Books = {
     }
 }
 console.log(Books.details)
+
+let product = {
+    name: "Laptop",
+    price: 999.99,
+    stock: 10
+}
+//write a program to log each property and its value 
+for (let key in product) {
+    console.log(`${key}: ${product[key]}`)
+}
