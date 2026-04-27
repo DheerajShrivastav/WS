@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Countdown Timer</title>
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            font-family: Arial, sans-serif;
+            background: #f9fafb;
+        }
+
+        .timer-card {
+            width: min(92vw, 420px);
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .row {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            margin-bottom: 12px;
+        }
+
+        input {
+            width: 160px;
+            padding: 10px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        button {
+            border: none;
+            padding: 10px 14px;
+            border-radius: 8px;
+            color: #fff;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        #startBtn {
+            background: #16a34a;
+        }
+
+        #resetBtn {
+            background: #dc2626;
+        }
+
+        .display {
+            font-size: clamp(30px, 7vw, 48px);
+            font-weight: bold;
+            color: #111827;
+            margin: 12px 0;
+        }
+
+        .status {
+            color: #334155;
+            min-height: 24px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="timer-card">
+        <h2>Countdown Timer</h2>
+        <div class="row">
+            <input id="secondsInput" type="number" min="1" placeholder="Enter seconds" />
+            <button id="startBtn">Start</button>
+            <button id="resetBtn">Reset</button>
+        </div>
+
+        <div class="display" id="countdownDisplay">00:00</div>
+        <p class="status" id="statusText">Enter time and press Start.</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
